@@ -46,41 +46,44 @@ if (passwordLowerCase === false && passwordUpperCase === false && passwordSpecia
         passwordSpecialCharacters = window.confirm("Would you like to use special characters?");
         passwordNumbers = window.confirm("Would you like to use");
     }  while (passwordLowerCase === false && passwordUpperCase === false && passwordSpecialCharacters === false && passwordNumbers === false);
- }
+}
 
  // password has to be the length of 8 to 128 characters //
 if (passwordLength < 8 || passwordLength > 128){
     window.alert("Please enter password length between 8-128");
-    
 }
-    let randomNumber = Math.floor()*lowerCase.length;
+// User selection input //
+else {
+    if (passwordLowerCase === true ){
+    userSelection = userSelection.concat(lowerCase);
+    }
+    if (passwordUpperCase === true) {
+        userSelection = userSelection.concat(upperCase);
+    }
+    if (passwordSpecialCharacters === true){
+        userSelection = userSelection.concat(specialCharacters);
+    } 
+    if (passwordNumbers === true ) {
+        userSelection = userSelection.concat(numbers);
+    }
+}
+// user creates a password using given letter, characters and symbols //
+for (let i = 0; i < passwordLength; i++) {
+    let rgn = Math.floor(Math.random() * userSelection.length);
+    finalPassword = finalPassword + userSelection[rgn];
+    console.log(finalPassword);
 
-    let roundedNumber = Math.floor(randomNumber);
-    console.log(randomNumber);
-    console.log("randomly generated"  +lowerCase[roundedNumber]);
+}
+return "Generate password will go here!";
 
-
-
-
-// ^^ these things are from the actual file along with added video input ^^//
-// Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
 
-
-function generatePassword(){
-    console.log("You clicked the button!");
-
+// TODO! // 
    // 1. Prompt the user for the password criteria
-   // a. Password length 8 < 128
-   // b. lowercase, uppercase, numbers, special characters
+   // a. Password length 8 - 128
+   // b. lowercase, uppercase, special characters, special characters 
    // 2. Validate the input 
    // 3. Generate password based on the criteria
    // 3. Display password to the page. 
 
-   
-   
-    return "Generate password will go here!";
-}
