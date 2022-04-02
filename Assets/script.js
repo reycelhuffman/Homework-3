@@ -46,7 +46,7 @@ if (passwordLowerCase === false && passwordUpperCase === false && passwordSpecia
         passwordSpecialCharacters = window.confirm("Would you like to use special characters?");
         passwordNumbers = window.confirm("Would you like to use");
     }  while (passwordLowerCase === false && passwordUpperCase === false && passwordSpecialCharacters === false && passwordNumbers === false);
-}
+ }
 
  // password has to be the length of 8 to 128 characters //
 if (passwordLength < 8 || passwordLength > 128){
@@ -68,7 +68,7 @@ else {
     }
 }
 // user creates a password using given letter, characters and symbols //
-for (let i = 0; i < passwordLength; i++) {
+for (let i = 0; < passwordLength; i ++){
     let rgn = Math.floor(Math.random() * userSelection.length);
     finalPassword = finalPassword + userSelection[rgn];
     console.log(finalPassword);
@@ -76,13 +76,26 @@ for (let i = 0; i < passwordLength; i++) {
 }
 return "Generate password will go here!";
 
-generateBtn.addEventListener("click", writePassword);
+    //let randomNumber = Math.floor()*lowerCase.length;
+
+    //let roundedNumber = Math.floor(randomNumber);
+    //console.log(randomNumber);
+    //console.log("randomly generated"  +lowerCase[roundedNumber]);
+
+// ^^ these things are from the actual file along with added video input ^^//
+// Add event listener to generate button
+//generateBtn.addEventListener("click", writePassword);
+
+// Add event listener to generate button
+//generateBtn.addEventListener("click", writePassword);
 
 
-// TODO! // 
+//function generatePassword(){
+    //console.log("You clicked the button!");
+
    // 1. Prompt the user for the password criteria
-   // a. Password length 8 - 128
-   // b. lowercase, uppercase, special characters, special characters 
+   // a. Password length 8 < 128
+   // b. lowercase, uppercase, numbers, special characters
    // 2. Validate the input 
    // 3. Generate password based on the criteria
    // 3. Display password to the page. 
