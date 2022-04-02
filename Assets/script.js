@@ -26,8 +26,7 @@ function generatePassword(){
     let numbers =  ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
     let finalPassword = "";
     let userSelection = [""];
-    
-    }
+}                                                                                                                                                                                                                                                                                                                                           
     
 // user's input box prompt //
 let passwordLength = window.prompt("How many character would you like your password to be?");
@@ -45,21 +44,21 @@ if (passwordLowerCase === false && passwordUpperCase === false && passwordSpecia
         passwordSpecialCharacters = window.confirm("Would you like to use special characters?");
         passwordNumbers = window.confirm("Would you like to use numbers?");
     }  while (passwordLowerCase === false && passwordUpperCase === false && passwordSpecialCharacters === false && passwordNumbers === false);
- }
+}
 
  // password has to be the length of 8 to 128 characters //
-if (passwordLength < 8 || passwordLength > 128){
-    window.alert("Please enter password number of 8 or more and 128 or less. ");
+if (passwordLength < 8 || passwordLength > 128) {
+    window.alert("Please enter password number of 8 or more and 128 or less.")
 }
 // User selection input //
 else {
-    if (passwordLowerCase === true ){
+    if (passwordLowerCase === true ) {
     userSelection = userSelection.concat(lowerCase);
     }
     if (passwordUpperCase === true) {
         userSelection = userSelection.concat(upperCase);
     }
-    if (passwordSpecialCharacters === true){
+    if (passwordSpecialCharacters === true) {
         userSelection = userSelection.concat(specialCharacters);
     } 
     if (passwordNumbers === true) {
@@ -72,9 +71,10 @@ for (let i = 0; i < passwordLength; i++) {
     finalPassword = finalPassword + userSelection[rgn];
     console.log(finalPassword);
 }
-
-return finalPassword;
+    return finalPassword;
+}
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
 
